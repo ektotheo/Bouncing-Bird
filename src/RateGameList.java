@@ -1,13 +1,17 @@
 import java.util.Observable;
 
 public class RateGameList extends Observable {
+    private BouncingBirdDBDAIO dbDAO;
 
     public RateGameList() {
-
+this.dbDAO = new BouncingBirdDBDAO();
     }
-   public void writeReviewFile(String bewertungstext, int sterne){
+   public void writeReviewFile(String username, String comments, int rating,  ){
+   dbDAO.addRating(username, sterne, bewertungstext);
+    setChanged();
+    notifyObservers();
    }
 
-    public void  renderReview(){
-    }
+    public List<Rating> renderReview(){
+    return dbDAO.getRatings();
 }
