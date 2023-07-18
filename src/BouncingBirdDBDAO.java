@@ -57,7 +57,11 @@ public class BouncingBirdDBDAO implements BouncingBirdDAO{
         }
         return name;
     }
-
+    
+    public void addRating( String username, String comments, int rating){ 
+    } 
+    public String getRatings() {
+    }
     @Override
     public void setterMethode(String typ, String pfad) {
         try (Connection connection = ora.getConnection()) {
