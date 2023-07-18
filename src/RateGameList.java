@@ -7,7 +7,7 @@ public class RateGameList extends Observable {
 this.dbDAO = new BouncingBirdDBDAO();
     }
    public void writeReviewFile(String username, String comments, int rating,  ){
-   dbDAO.addRating(username, sterne, bewertungstext);
+   dbDAO.addRating(username, rating, comments);
     setChanged();
     notifyObservers();
    }
