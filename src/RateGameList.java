@@ -1,7 +1,7 @@
 import java.util.Observable;
 
 public class RateGameList extends Observable {
-    private BouncingBirdDBDAIO dbDAO;
+    private BouncingBirdDBDAO dbDAO;
 
     public RateGameList() {
 this.dbDAO = new BouncingBirdDBDAO();
