@@ -15,7 +15,7 @@ public class RateGameList extends Observable {
         notifyObservers();
     }
 
-    public List<Rating> renderReview() {
+    public renderReview() {
         return dbDAO.getRatings();
     }
 
