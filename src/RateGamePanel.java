@@ -9,7 +9,7 @@ public class RateGamePanel extends MenuFundament {
     private JTextArea reviewArea;
     private JTextField usernameField;
     private JTextField commentField;
-    private RateGameList rateGameList; // Angenommen, dies ist die Klasse, die über die Methode addRating verfügt
+    private RateGameList rateGameList;
 
     public RateGamePanel(ActionListener actionListener, RateGameList rateGameList) {
         super();
@@ -62,11 +62,10 @@ public class RateGamePanel extends MenuFundament {
                 return;
             }
 
-            // Angenommen, die Methode addRating verwendet ein Rating-Objekt als Parameter
-            rateGameList.addRating(new Rating(username, comment, 5)); // Assuming a default rating of 5
+            rateGameList.writeReviewFile(username, comment, 5); // Wir gehen von einem Standardrating von 5 aus
 
-            // Refresh the displayed ratings
-            displayRatings(rateGameList.getRatings());
+            // Aktualisieren Sie die angezeigten Bewertungen
+            displayRatings(rateGameList.renderReview());
         }
     }
 
